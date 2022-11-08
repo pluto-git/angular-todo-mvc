@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, combineLatest, map } from 'rxjs';
 import { TodosService } from '../../data-access/services/todos.service';
 import { FilterEnum } from '../../data-access/types/filter.enum';
@@ -7,7 +7,8 @@ import { TodoInterface } from '../../data-access/types/todo.interfaces';
 @Component({
   selector: 'app-todos-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MainComponent implements OnInit {
 

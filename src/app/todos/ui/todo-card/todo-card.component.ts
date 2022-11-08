@@ -1,5 +1,5 @@
 import {
-  Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges
+  Component, ChangeDetectionStrategy, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef, OnChanges, SimpleChanges, ɵisDefaultChangeDetectionStrategy
 } from '@angular/core';
 import { DumbComponent } from 'src/app/shared/classes/dumb-component.class';
 import { TodoInterface } from '../../data-access/types/todo.interfaces';
@@ -7,7 +7,8 @@ import { TodoInterface } from '../../data-access/types/todo.interfaces';
 @Component({
   selector: 'app-todos-todo-card',
   templateUrl: './todo-card.component.html',
-  styleUrls: ['./todo-card.component.scss']
+  styleUrls: ['./todo-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoCardComponent extends DumbComponent implements OnInit, OnChanges {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { TodosService } from '../../data-access/services/todos.service';
 import { FilterEnum } from '../../data-access/types/filter.enum';
@@ -6,7 +6,8 @@ import { FilterEnum } from '../../data-access/types/filter.enum';
 @Component({
   selector: 'app-todos-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FooterComponent implements OnInit {
 
